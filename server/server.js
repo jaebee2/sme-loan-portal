@@ -4,6 +4,7 @@ const loanRoutes = require("./routes/loanRoutes")
 const authRoutes = require("./routes/authRoutes")
 const businessRoutes = require("./routes/businessRoutes")
 const documentRoutes = require("./routes/documentRoutes")
+const adminRoutes = require("./routes/adminRoutes")
 
 const app = express()
 
@@ -16,6 +17,7 @@ app.use("/api/business", businessRoutes)
 app.use("/uploads", express.static("uploads"))
 
 app.use("/api/documents", documentRoutes)
+app.use("/api/admin", adminRoutes)
 
 app.get("/", (req, res) => {
   res.send("SME Loan API Running")
